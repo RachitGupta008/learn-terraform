@@ -20,10 +20,10 @@ provider "google" {
 
 
 resource "google_compute_instance" "vm_instance" {
-  name         = "terraform-instance-21"
+  name         = "terraform-instance-22"
   machine_type = "f1-micro"
-  tags         = ["web", "dev"]
-
+  tags         = ["http-server", "dev"]
+metadata_startup_script = "sudo apt update && sudo apt -y install apache2"
 
 	boot_disk {
     initialize_params {
